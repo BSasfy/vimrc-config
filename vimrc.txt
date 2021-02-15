@@ -1,0 +1,38 @@
+set term=screen-256color
+
+" Auto close braces and quotes
+inoremap ( ()<Esc>i
+inoremap { {}<Esc>i
+inoremap " ""<Esc>i
+inoremap [ []<Esc>i
+
+call plug#begin()
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+Plug 'sheerun/vim-polyglot'
+Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
+Plug 'tpope/vim-surround'
+Plug 'w0rp/ale'
+Plug 'junegunn/fzf'
+Plug 'junegunn/fzf.vim'
+call plug#end()
+autocmd vimenter * NERDTree
+set number
+
+
+set tabstop=2
+set shiftwidth=2
+set expandtab
+set autoindent
+
+" Set this in your vimrc file to disabling highlighting
+let g:ale_set_highlights = 0
+let g:ackprg = 'ag --vimgrep'
+let g:ackprg = 'ag --nogroup --nocolor --column'
+
+autocmd BufNewFile,BufRead *.ts,*.tsx set filetype=typescript.tsx
+
+nmap <C-h> <C-w>h
+nmap <C-j> <C-w>j
+nmap <C-k> <C-w>k
+nmap <C-l> <C-w>l
+nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
