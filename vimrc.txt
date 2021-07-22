@@ -14,6 +14,8 @@ Plug 'tpope/vim-surround'
 Plug 'w0rp/ale'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
+Plug 'epmatsw/ag.vim'
+Plug 'vim-test/vim-test'
 call plug#end()
 autocmd vimenter * NERDTree
 set number
@@ -36,3 +38,10 @@ nmap <C-j> <C-w>j
 nmap <C-k> <C-w>k
 nmap <C-l> <C-w>l
 nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
+nnoremap <silent> <Leader>f :TestFile<CR>
+nnoremap <silent> NLeader>l :TestLast<CR> 
+nnoremap <silent> NLeader>n :TestNearest<CR> 
+nnoremap <silent> NLeader>s :TestSuite<CR> 
+nnoremap <silent> NLeader>v :TestVisit<CR> 
+set mouse=a
+set mouse=n
